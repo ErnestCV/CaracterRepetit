@@ -23,6 +23,7 @@ public class Main {
 
         //Inicialitzem
         Set<Character> map = new HashSet<>();
+        char repetit = '\0';
 
         //Recorrem el string
         for (int i = 0; i < s.length(); i++) {
@@ -31,14 +32,15 @@ public class Main {
             //Si el mapa ja conté el caràcter actual
             if (map.contains(current)) {
                 //Retornem
-                return current;
+                repetit = current;
+                break;
             } else {
                 //Si no, l'afegim al mapa
                 map.add(current);
             }
         }
         //Retornem caràcter buit
-        return '\0';
+        return repetit;
     }
 
     public static char caracterNoRepetit(String s) {
